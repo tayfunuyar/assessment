@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Projects\\seturassessment\\ContactService\\ContactService.csproj": {}
+    "D:\\Projects\\seturassessment\\ContactService\\ContactService.csproj": {}
   },
   "projects": {
-    "d:\\Projects\\seturassessment\\ContactService\\ContactService.csproj": {
+    "D:\\Projects\\seturassessment\\ContactService\\ContactService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Projects\\seturassessment\\ContactService\\ContactService.csproj",
+        "projectUniqueName": "D:\\Projects\\seturassessment\\ContactService\\ContactService.csproj",
         "projectName": "ContactService",
-        "projectPath": "d:\\Projects\\seturassessment\\ContactService\\ContactService.csproj",
+        "projectPath": "D:\\Projects\\seturassessment\\ContactService\\ContactService.csproj",
         "packagesPath": "C:\\Users\\tyfnu\\.nuget\\packages\\",
-        "outputPath": "d:\\Projects\\seturassessment\\ContactService\\obj\\",
+        "outputPath": "D:\\Projects\\seturassessment\\ContactService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tyfnu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,6 +53,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.11, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
             },
             "RabbitMQ.Client": {
               "target": "Package",

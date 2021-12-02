@@ -11,7 +11,19 @@ namespace ContactService.Data {
        public DbSet<ContactInformation> ContactInformations { get;set;}
 
        protected override void OnModelCreating(ModelBuilder builder){
-             
+
+            builder.HasPostgresExtension("uuid-ossp");
+            
+              builder.Entity<Contact>()
+              .HasMany(x=>x.ContactInformations)
+              .WithOne(x=>x.Contact!)
+              .HasForeignKey(x=>x.ContactUuid); 
+
+
+              builder.Entity<ContactInformation>()
+              .HasOne(x=>x.Contact)
+              .WithMany(x=>x.ContactInformations)
+              .HasForeignKey(x=>x.ContactUuid);
        }
     }
 }

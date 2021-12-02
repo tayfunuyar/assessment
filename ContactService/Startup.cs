@@ -2,10 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ContactService.Data;
+using ContactService.Data.Abstract;
+using ContactService.Data.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,19 +27,27 @@ namespace ContactService
 
         public IConfiguration Configuration { get; }
 
-       
+
         public void ConfigureServices(IServiceCollection services)
         {
 
             services.AddControllers();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddDbContext<Data.AppDbContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("ContactConn")));
+            // Register Dependencies
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IContactInformationRepository, ContactInformationRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ContactService", Version = "v1" });
             });
         }
 
-        
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -55,6 +67,8 @@ namespace ContactService
             {
                 endpoints.MapControllers();
             });
+            // Initialize Database here migrate to pvc  
+            PrepareDb.PreparePopulation(app, env.IsProduction());
         }
     }
 }
