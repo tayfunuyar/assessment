@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using ContactService.Data.Concrete;
 
 namespace ContactService.Entities
 {
-    public class Contact
+    public class Contact:BaseEntity
     {
-        [Key]
-        [Required]
-        public Guid Uuid { get; set; }
+      
         [Required]
         public string Name { get; set; }
         [Required]
