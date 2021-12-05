@@ -34,6 +34,17 @@ K8S klasörünün bulunduğu dizinde aşagıdaki kubectl command çalıştırıl
 ```
 kubectl apply -f k8s 
 ```
+Proje ingress ile erişmek için kubernetes tarafında ingress deploy edilmesi gerekmektedir. Deployment komutu; 
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.0/deploy/static/provider/aws/deploy.yaml
+```
+Her iki servis içinde bulunan nodeportlar üzerinden erişim sağlamak için aşagıdaki kubectl command çalıştırıldıktan sonra nodeportlar üzerinden direk request yapıbilmektedir. 
+```
+kubectl get services
+```
+![image](https://user-images.githubusercontent.com/27923376/144756850-cb8057db-46f5-424b-8aad-8ef75d7c059c.png)
+
+
 UnitTest tarafında işyerimdeki yogunluktan dolayı ve iş teslimlerinden dolayı coverage(%60) kadar ekleme yapılamamıştır. 
 
 
