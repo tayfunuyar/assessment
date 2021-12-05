@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fa7b6950-8bfd-4180-bac0-2ef2cc5f1a50": {
+      "ProjectGuid": "fa7b6950-8bfd-4180-bac0-2ef2cc5f1a50",
+      "DisplayName": "ContactService.Tests",
+      "ColorIndex": 0
+    },
+    "32f30fbb-3692-489d-b6fa-5c24cf91b4f1": {
+      "ProjectGuid": "32f30fbb-3692-489d-b6fa-5c24cf91b4f1",
+      "DisplayName": "ContactService",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "b48dc58e-393f-4a67-8b22-9f329cddc969": {
+      "ProjectGuid": "b48dc58e-393f-4a67-8b22-9f329cddc969",
+      "DisplayName": "ReportService.Tests",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
